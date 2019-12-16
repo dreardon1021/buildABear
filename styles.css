@@ -65,15 +65,18 @@ img.bear-items {
 /* Column 3 */
 
 .outfit-section {
-  display: flex;
+  display: block;
+  justify-content: space-around;
 }
 
 .outfit {
   background-color: white;
   display: flex;
-  /* margin: 2em;
-  padding: 1em; */
-  width: 90%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2em;
+  padding: 1em;
+  width: 15rem;
   border-radius: .5em;
   box-shadow: 5px 5px 10px 0px #1F2D57;
 }
