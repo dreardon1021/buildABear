@@ -92,18 +92,17 @@ img.bear-items {
 
 
 /* Column 3 */
-
 .outfit-section {
-  display: block;
-  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .outfit {
   background-color: white;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 2em;
+  justify-content: space-between;
+  margin: 1em;
   padding: 1em;
   width: 15rem;
   border-radius: .5em;
@@ -130,7 +129,3 @@ img.bear-items {
   width: 20%;
   height: 2em
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
