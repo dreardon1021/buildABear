@@ -51,6 +51,17 @@ height: 2.5em;
   padding: 10px;
 }
 /* Columnn 2 */
+.col2 {
+  display: flex;
+  flex-direction: column;
+}
 img.bear-items {
   width: 96%;
+}
+.col2 button {
+  align-self: center;
+}
+.col2 input {
+  align-self: center;
+  width: 50%;
 }
