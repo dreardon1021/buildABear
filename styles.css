@@ -52,9 +52,13 @@ button:hover {
 
 }
 
+
+/* Column 1 */
+
 button:active {
   transform: translateY(5px);
 }
+
 
 /*Columns*/
 section {
@@ -86,6 +90,32 @@ img.bear-items {
   width: 96%;
 }
 
+
+/* Column 3 */
+
+.outfit-section {
+  display: block;
+  justify-content: space-around;
+}
+
+.outfit {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2em;
+  padding: 1em;
+  width: 15rem;
+  border-radius: .5em;
+  box-shadow: 5px 5px 10px 0px #1F2D57;
+}
+
+.close-button {
+  width: .75em;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .col2 button {
   align-self: center;
 }
@@ -99,3 +129,4 @@ img.bear-items {
   width: 20%;
   height: 2em
 }
+
