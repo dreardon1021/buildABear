@@ -44,8 +44,9 @@ background-color: #4C88FF;
 }
 
 button:hover {
-  background-color: #6FE0E7;
-  color: #4C88FF;
+  background-color: #1F2D57;
+  color: #6FE0E7;
+
 }
 
 button:active {
