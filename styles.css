@@ -1,0 +1,12 @@
+* {
+
+}
+
+header {
+  font-family: 'Oleo Script', cursive;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
