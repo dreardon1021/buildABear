@@ -43,6 +43,15 @@ color: white;
 background-color: #4C88FF;
 }
 
+button:hover {
+  background-color: #1F2D57;
+  color: #6FE0E7;
+
+}
+
+button:active {
+  transform: translateY(5px);
+}
 
 /* column 1 */
 
