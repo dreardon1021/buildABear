@@ -44,7 +44,7 @@ background-color: #4C88FF;
 }
 
 
-/* column 1 */
+/* Column 1 */
 
 .col1-buttons {
   display: flex;
@@ -60,4 +60,26 @@ background-color: #4C88FF;
 /* Columnn 2 */
 img.bear-items {
   width: 96%;
+}
+
+/* Column 3 */
+
+.outfit-section {
+  display: flex;
+}
+
+.outfit {
+  background-color: white;
+  display: flex;
+  /* margin: 2em;
+  padding: 1em; */
+  width: 90%;
+  border-radius: .5em;
+  box-shadow: 5px 5px 10px 0px #1F2D57;
+}
+
+.close-button {
+  width: .75em;
+  display: flex;
+  justify-content: flex-end;
 }
