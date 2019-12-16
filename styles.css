@@ -1,10 +1,22 @@
 /* Page styles */
-* {
-
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Oleo Script', cursive;
+  text-decoration: underline;
+  font-size: 2em;
+  height: 3.5em;
+  width: 100%;
+  background-color: #1F2D57;
+  color: #4C88FF;
 }
 
 main {
@@ -13,13 +25,32 @@ main {
 }
 
 section {
-  border: 1px solid black;
+border: 1px solid black;
+padding: 10px;
+margin: 13px;
+width: 30%;
+box-sizing: border-box;
 }
 
 button {
-  color: white;
-  background-color: #4C88FF;
-  width: 32%;
-  box-shadow: 5px 5px 10px 0px #1F2D57;
-  border: 1px solid white;
+color: white;
+background-color: #4C88FF;
+width: 32%;
+box-shadow: 5px 5px 10px 0px #1F2D57;
+border: 1px solid white;
+margin: 5px;
+height: 2.5em;
+}
+
+
+/* column 1 */
+
+.col1-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+/* Columnn 2 */
+img.bear-items {
+  width: 96%;
 }
