@@ -121,7 +121,8 @@ img.bear-items {
 }
 .col2 input {
   align-self: center;
-  width: 50%;
+  width: 70%;
+  height: 2.5em;
 }
 
 /* Footer content */
@@ -129,4 +130,7 @@ img.bear-items {
   width: 20%;
   height: 2em
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
