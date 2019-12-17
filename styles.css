@@ -51,19 +51,9 @@ button:hover {
   color: #6FE0E7;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* Column 1 */
-=======
 button:active {
   transform: translateY(5px);
 }
->>>>>>> master
-=======
-button:active {
-  transform: translateY(5px);
-}
->>>>>>> master
 
 /*Columns*/
 section {
@@ -106,10 +96,6 @@ img.bear-items {
   background-color: white;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* Column 3 */
-=======
 .col2-inputs{
   display: flex;
   align-items: center;
@@ -125,7 +111,6 @@ img.bear-items {
 .col2 button {
   align-self: center;
 }
->>>>>>> master
 
 
 /* Column 3 */
@@ -151,24 +136,9 @@ img.bear-items {
   display: flex;
   justify-content: flex-end;
 }
-<<<<<<< HEAD
-=======
-.col2 button {
-  align-self: center;
-}
-.col2 input {
-  align-self: center;
-  width: 50%;
-}
-=======
->>>>>>> master
 
 /* Footer content */
 .footer-button {
   width: 20%;
   height: 2em
 }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
