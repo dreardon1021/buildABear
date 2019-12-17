@@ -49,11 +49,16 @@ background-color: #4C88FF;
 button:hover {
   background-color: #1F2D57;
   color: #6FE0E7;
-
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Column 1 */
+=======
+button:active {
+  transform: translateY(5px);
+}
+>>>>>>> master
 =======
 button:active {
   transform: translateY(5px);
@@ -66,7 +71,6 @@ padding: 10px;
 margin: 13px;
 width: 30%;
 box-sizing: border-box;
-border: 1px solid black;
 }
 
 /* column 1 */
@@ -79,31 +83,63 @@ border: 1px solid black;
 }
 
 .col1-headers{
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
+
+section.col1,
+section.col3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Columnn 2 */
 .col2 {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
+
 img.bear-items {
   width: 96%;
+  border: 2mm ridge #6FE0E7;
+  background-color: white;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Column 3 */
+=======
+.col2-inputs{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+.col2 input {
+  align-self: center;
+  width: 70%;
+  height: 2.5em;
+}
+
+.col2 button {
+  align-self: center;
+}
+>>>>>>> master
+
+
+/* Column 3 */
 .outfit-section {
-  display: block;
-  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .outfit {
   background-color: white;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 2em;
+  justify-content: space-between;
+  margin: 1em;
   padding: 1em;
   width: 15rem;
   border-radius: .5em;
@@ -115,6 +151,7 @@ img.bear-items {
   display: flex;
   justify-content: flex-end;
 }
+<<<<<<< HEAD
 =======
 .col2 button {
   align-self: center;
@@ -123,10 +160,15 @@ img.bear-items {
   align-self: center;
   width: 50%;
 }
+=======
+>>>>>>> master
 
 /* Footer content */
 .footer-button {
   width: 20%;
   height: 2em
 }
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
