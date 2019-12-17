@@ -126,7 +126,7 @@ img.bear-items {
   justify-content: space-between;
   margin: 1em;
   padding: 1em;
-  width: 15rem;
+  width: 100%;
   border-radius: .5em;
   box-shadow: 5px 5px 10px 0px #1F2D57;
 }
