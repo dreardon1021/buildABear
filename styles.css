@@ -1,4 +1,4 @@
-/* Page styles */
+/* Page wide styles */
 body{
   width: 100%;
   height: 100%;
@@ -17,20 +17,23 @@ header {
   height: 3.5em;
   width: 100%;
   background-color: #1F2D57;
-  color: #4C88FF;
+  color: #6FE0E7;
 }
 
 main {
   display: flex;
   justify-content: space-around;
+  margin: 0px;
+  padding: 0px;
 }
 
-section {
-padding: 10px;
-margin: 13px;
-width: 30%;
-box-sizing: border-box;
-border: 1px solid black;
+footer {
+  width: 100%;
+  height: 3em;
+  background-color: #a7b1c5;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 button {
@@ -43,9 +46,30 @@ color: white;
 background-color: #4C88FF;
 }
 
+button:hover {
+  background-color: #1F2D57;
+  color: #6FE0E7;
 
+}
+
+<<<<<<< HEAD
 /* Column 1 */
+=======
+button:active {
+  transform: translateY(5px);
+}
+>>>>>>> master
 
+/*Columns*/
+section {
+padding: 10px;
+margin: 13px;
+width: 30%;
+box-sizing: border-box;
+border: 1px solid black;
+}
+
+/* column 1 */
 .col1-buttons {
   display: flex;
   justify-content: space-around;
@@ -58,10 +82,15 @@ background-color: #4C88FF;
   margin-bottom: 0px;
 }
 /* Columnn 2 */
+.col2 {
+  display: flex;
+  flex-direction: column;
+}
 img.bear-items {
   width: 96%;
 }
 
+<<<<<<< HEAD
 /* Column 3 */
 
 .outfit-section {
@@ -86,3 +115,18 @@ img.bear-items {
   display: flex;
   justify-content: flex-end;
 }
+=======
+.col2 button {
+  align-self: center;
+}
+.col2 input {
+  align-self: center;
+  width: 50%;
+}
+
+/* Footer content */
+.footer-button {
+  width: 20%;
+  height: 2em
+}
+>>>>>>> master
