@@ -1,6 +1,6 @@
 class Outfit {
   constructor () {
-
+    this.garments = [];
   }
 }
 
