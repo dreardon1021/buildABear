@@ -139,13 +139,13 @@ img.bear-items {
 
 /* Bear Items Images */
 .top-hat {
-width: 5em;
-height: 5em;
-position: absolute;
-top: 5em;
-left: 14em;
-transform: rotate(21deg);
-display: none;
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 5em;
+  left: 14em;
+  transform: rotate(21deg);
+  display: none;
 }
 
 .sun-hat {
