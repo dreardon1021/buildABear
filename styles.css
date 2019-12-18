@@ -58,11 +58,20 @@ button:active {
   transform: translateY(5px);
 }
 
+<<<<<<< HEAD
 button:active {
   transform: translateY(5px);
 }
 
 
+=======
+.selected {
+  background-color: #1F2D57;
+  color: #6FE0E7;
+  outline: none;
+}
+
+>>>>>>> 31233a1b4b2dde7738fda10c96cf49df16f1810b
 /*Columns*/
 section {
 padding: 10px;
