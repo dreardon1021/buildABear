@@ -55,6 +55,12 @@ button:active {
   transform: translateY(5px);
 }
 
+.selected {
+  background-color: #1F2D57;
+  color: #6FE0E7;
+  outline: none;
+}
+
 /*Columns*/
 section {
 padding: 10px;
