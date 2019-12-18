@@ -1,17 +1,24 @@
-// var Outfit = require('../outfit');
-var hatButtons = document.querySelector('.hats');
-var clothesButtons = document.querySelector('.clothes');
-var accessoriesButtons = document.querySelector('.accessories');
-var backgrondButtons = document.querySelector('.backgrounds');
+var outfit = new Outfit ('');
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll('.clothes-button')
-var acessoriesNodeList = document.querySelectorAll('.accessories-button')
+var accessoriesNodeList = document.querySelectorAll('.accessories-button')
 var backgroundNodeList = document.querySelectorAll('.background-button')
 
-hatButtons.addEventListener('click', highlightHatTarget)
-clothesButtons.addEventListener('click', highlightClothesTarget)
-accessoriesButtons.addEventListener('click', highlightAccessoriesTarget)
-backgrondButtons.addEventListener('click', highlightBackgroundTarget)
+for(var i = 0; i < hatNodeList.length; i++) {
+  hatNodeList[i].addEventListener('click', highlightHatTarget)
+}
+
+for(var i = 0; i < clothesNodeList.length; i++) {
+  clothesNodeList[i].addEventListener('click', highlightClothesTarget)
+}
+
+for(var i = 0; i < accessoriesNodeList.length; i++) {
+  accessoriesNodeList[i].addEventListener('click', highlightAccessoriesTarget)
+}
+
+for(var i = 0; i < backgroundNodeList.length; i++) {
+  backgroundNodeList[i].addEventListener('click', highlightBackgroundTarget)
+}
 
 function highlightHatTarget(event) {
   for (i = 0; i < hatNodeList.length; i++) {
@@ -32,8 +39,8 @@ function highlightClothesTarget(event) {
 };
 
 function highlightAccessoriesTarget(event) {
-  for (i = 0; i < acessoriesNodeList.length; i++) {
-    acessoriesNodeList[i].classList.remove('selected')
+  for (i = 0; i < accessoriesNodeList.length; i++) {
+    accessoriesNodeList[i].classList.remove('selected')
   };
   if(event.target.classList.contains('accessories-button')) {
     event.target.classList.add('selected');
