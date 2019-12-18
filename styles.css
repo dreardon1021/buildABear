@@ -98,7 +98,7 @@ section.col3 {
 
 img.bear-items {
   width: 96%;
-  padding-top: 2em;
+  padding-top: 3em;
   border: 2mm ridge #6FE0E7;
   background-color: white;
 }
@@ -127,11 +127,17 @@ position: relative;
 top: -26em;
 left: 13em;
 transform: rotate(21deg);
+display: none;
 }
 
 .sun-hat {
-  width: 5em;
-  height: 5em;
+  width: 15em;
+  height: 15em;
+  position: relative;
+  top: -29.5em;
+  left: 7em;
+  transform: scaleX(-1.1) rotate(-51deg);
+  display: none;
 }
 
 
