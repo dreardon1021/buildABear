@@ -148,6 +148,27 @@ display: none;
   top: 8em;
   left: 8.3em;
   transform: rotate(14deg);
+  display: none;
+}
+
+.hair-bow {
+  width: 9em;
+  height: 5em;
+  position: absolute;
+  top: 8em;
+  left: 11.5em;
+  transform: rotate(19deg);
+  display: none;
+}
+
+.crown {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 6em;
+  left: 13em;
+  display: none;
+  transform: rotate(17deg);
 }
 
 /* Column 3 */

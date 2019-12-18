@@ -4,7 +4,4 @@ class Outfit {
   }
 }
 
-
-
-
-module.exports = Outfit;
+// module.exports = Outfit
