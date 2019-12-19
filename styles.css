@@ -117,6 +117,7 @@ img.bear-items {
   border: 2mm ridge #6FE0E7;
   background-color: white;
   max-width: 100%;
+  z-index: 2;
 }
 
 /* Column 3 */
@@ -243,9 +244,9 @@ transform: rotate(7deg);
   height: 31em;
   position: absolute;
   top: 2em;
-  display: none;
+  /* display: none; */
   transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 /* Column 3 */
