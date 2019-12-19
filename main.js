@@ -4,17 +4,12 @@ var outfit = new Outfit({id: generateRandomId()});
 function generateRandomId() {
   return Math.floor(Math.random() * 1000);
 }
-console.log(outfit.id)
-
-function functionName() {
-  
-}
-
 
 var hatNodeList = document.querySelectorAll('.hat-button');
-var clothesNodeList = document.querySelectorAll('.clothes-button')
-var accessoriesNodeList = document.querySelectorAll('.accessories-button')
-var backgroundNodeList = document.querySelectorAll('.background-button')
+var clothesNodeList = document.querySelectorAll('.clothes-button');
+var accessoriesNodeList = document.querySelectorAll('.accessories-button');
+var backgroundNodeList = document.querySelectorAll('.background-button');
+var hatImages = document.querySelectorAll('.hats');
 
 for(var i = 0; i < hatNodeList.length; i++) {
   hatNodeList[i].addEventListener('click', highlightHatTarget)
