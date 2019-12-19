@@ -188,6 +188,26 @@ img.bear-items {
   transform: rotate(17deg);
 }
 
+.dress {
+  width: 21em;
+height: 19em;
+position: absolute;
+top: 10em;
+left: 4em;
+display: none;
+transform: rotate(7deg);
+}
+
+.vest {
+  width: 21em;
+height: 19em;
+position: absolute;
+top: 10em;
+left: 4em;
+/* display: none; */
+transform: rotate(7deg);
+}
+
 /* Column 3 */
 .outfit-section {
   display: flex;

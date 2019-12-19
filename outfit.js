@@ -1,7 +1,9 @@
 class Outfit {
-  constructor () {
+  constructor(id, garments, title, background) {
+    this.id = id;
     this.garments = [];
+    this.title = '';
+    this.background = '';
+
   }
 }
-
-// module.exports = Outfit

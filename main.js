@@ -1,3 +1,12 @@
+var outfit = new Outfit({id: generateRandomId()});
+
+function generateRandomId() {
+  return Math.floor(Math.random() * 1000);
+}
+
+console.log(outfit.id)
+
+
 // var outfit = new Outfit ('');
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll('.clothes-button')
