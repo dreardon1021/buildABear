@@ -108,7 +108,7 @@ section.col3 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: relative;
+  align-items: center;
 }
 
 img.bear-items {
@@ -117,9 +117,13 @@ img.bear-items {
   border: 2mm ridge #6FE0E7;
   background-color: white;
   max-width: 100%;
+  z-index: 0;
 }
 
-/* Column 3 */
+.bear-images {
+  position: relative;
+  width: 25em;
+}
 
 .col2-inputs{
   display: flex;
@@ -143,49 +147,54 @@ img.bear-items {
   height: 5em;
   position: absolute;
   top: 5em;
-  left: 14em;
+  left: 13em;
   transform: rotate(21deg);
-  display: none;
+  /* display: none; */
+  z-index: 1;
 }
 
 .sun-hat {
   width: 15em;
   height: 15em;
   position: absolute;
-  top: 2.5em;
-  left: 7em;
+  top: 0.5em;
+  left: 6em;
   transform: scaleX(-1.1) rotate(-51deg);
   display: none;
+  z-index: 2;
 }
 
 .space-helmet {
   width: 12em;
   height: 12em;
   position: absolute;
-  top: 8em;
-  left: 8.3em;
+  top: 6em;
+  left: 7.3em;
   transform: rotate(14deg);
   display: none;
+  z-index: 3;
 }
 
 .hair-bow {
   width: 9em;
   height: 5em;
   position: absolute;
-  top: 8em;
-  left: 11.5em;
+  top: 6em;
+  left: 9.5em;
   transform: rotate(19deg);
   display: none;
+  z-index: 4;
 }
 
 .crown {
   width: 5em;
   height: 5em;
   position: absolute;
-  top: 6em;
-  left: 13em;
+  top: 5em;
+  left: 12em;
   display: none;
   transform: rotate(17deg);
+  z-index: 5;
 }
 
 /* Column 3 */
@@ -203,7 +212,7 @@ img.bear-items {
   font-family: 'Montserrat', sans-serif;
   font-weight: 150;
   padding: 1em;
-  width: 17em;
+  width: 100%;
   border-radius: .5em;
   box-shadow: 5px 5px 10px 0px #1F2D57;
 }
@@ -229,18 +238,40 @@ img.bear-items {
   height: 2em
 }
 
+/* responsive design */
 @media screen and (max-width: 1439px) {
   main {
     width: 100%
   }
+
   .col1 {
     width: 30%;
   }
+
   .col2 {
-    width: 40%;
+    width: 30%;
   }
+
   .col3 {
     width: 30%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    width: 100%
+  }
+
+  .col1 {
+    width: 90%;
+  }
+
+  .col2 {
+    width: 90%
+  }
+
+  .col3 {
+    width: 90%;
   }
 }
 
@@ -250,14 +281,23 @@ img.bear-items {
     display: flex;
     flex-direction: column;
   }
+
   .col1 {
-    width: 100%;
+    width: 90%;
   }
+
   .col2 {
-    width: 100%;
+    width: 90%;
     order: -1;
   }
+
   .col3 {
-    width: 100%;
+    width: 90%;
+  }
+
+  .outfit-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
 }
