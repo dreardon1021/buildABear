@@ -1,4 +1,16 @@
-// var outfit = new Outfit ('');
+// Outfit class instance
+var outfit = new Outfit({id: generateRandomId()});
+
+function generateRandomId() {
+  return Math.floor(Math.random() * 1000);
+}
+console.log(outfit.id)
+
+function functionName() {
+  
+}
+
+
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll('.clothes-button')
 var accessoriesNodeList = document.querySelectorAll('.accessories-button')
