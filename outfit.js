@@ -6,4 +6,7 @@ class Outfit {
     this.background = '';
 
   }
+  addGarments() {
+    this.garments.push();
+  }
 }
