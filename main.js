@@ -1,4 +1,4 @@
-var outfit = new Outfit ('');
+// var outfit = new Outfit ('');
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll('.clothes-button')
 var accessoriesNodeList = document.querySelectorAll('.accessories-button')

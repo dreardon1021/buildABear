@@ -108,10 +108,12 @@ section.col3 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
 }
 
 img.bear-items {
   width: 96%;
+  padding-top: 5em;
   border: 2mm ridge #6FE0E7;
   background-color: white;
   max-width: 100%;
@@ -135,6 +137,56 @@ img.bear-items {
   align-self: center;
 }
 
+/* Bear Items Images */
+.top-hat {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 5em;
+  left: 14em;
+  transform: rotate(21deg);
+  display: none;
+}
+
+.sun-hat {
+  width: 15em;
+  height: 15em;
+  position: absolute;
+  top: 2.5em;
+  left: 7em;
+  transform: scaleX(-1.1) rotate(-51deg);
+  display: none;
+}
+
+.space-helmet {
+  width: 12em;
+  height: 12em;
+  position: absolute;
+  top: 8em;
+  left: 8.3em;
+  transform: rotate(14deg);
+  display: none;
+}
+
+.hair-bow {
+  width: 9em;
+  height: 5em;
+  position: absolute;
+  top: 8em;
+  left: 11.5em;
+  transform: rotate(19deg);
+  display: none;
+}
+
+.crown {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 6em;
+  left: 13em;
+  display: none;
+  transform: rotate(17deg);
+}
 
 /* Column 3 */
 .outfit-section {
@@ -151,7 +203,7 @@ img.bear-items {
   font-family: 'Montserrat', sans-serif;
   font-weight: 150;
   padding: 1em;
-  width: 100%;
+  width: 17em;
   border-radius: .5em;
   box-shadow: 5px 5px 10px 0px #1F2D57;
 }
