@@ -193,19 +193,19 @@ img.bear-items {
 height: 19em;
 position: absolute;
 top: 10em;
-left: 4em;
+left: 3em;
 display: none;
 transform: rotate(7deg);
 }
 
 .vest {
-  width: 21em;
-height: 19em;
-position: absolute;
-top: 10em;
-left: 4em;
-/* display: none; */
-transform: rotate(7deg);
+  width: 24em;
+  height: 25em;
+  position: absolute;
+  top: 7.5em;
+  left: 1.5em;
+  /* display: none; */
+  transform: rotate(2deg);
 }
 
 /* Column 3 */
