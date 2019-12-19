@@ -188,6 +188,42 @@ img.bear-items {
   transform: rotate(17deg);
 }
 
+.bowtie {
+  position: absolute;
+  top: 14em;
+  left: 9em;
+  width: 6em;
+  transform: rotate(15deg);
+  display: none;
+}
+
+.necklace {
+  position: absolute;
+  width: 7em;
+  top: 15em;
+  left: 8em;
+  transform: rotate(23deg);
+  display: none;
+}
+
+.smartwatch {
+  position: absolute;
+  width: 2.5em;
+  top: 13em;
+  left: 4em;
+  transform: rotate(73deg);
+  display: none;
+}
+
+.sunglasses {
+  position: absolute;
+  width: 8em;
+  top: 10.5em;
+  left: 9.25em;
+  transform: rotate(18deg);
+  display: none;
+}
+
 /* Column 3 */
 .outfit-section {
   display: flex;
