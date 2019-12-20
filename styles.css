@@ -151,7 +151,7 @@ img.bear-items {
   top: 5em;
   left: 13em;
   transform: rotate(21deg);
-  /* display: none; */
+  display: none;
   z-index: 1;
 }
 
@@ -254,7 +254,7 @@ transform: rotate(7deg);
   height: 31em;
   position: absolute;
   top: 2em;
-  /* display: none; */
+  display: none;
   transform: rotate(0deg);
   z-index: -1;
 }
