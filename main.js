@@ -14,19 +14,16 @@ var accessoriesNodeList = document.querySelectorAll('.accessories-button');
 var backgroundNodeList = document.querySelectorAll('.background-button');
 var hatImages = document.querySelectorAll('.hats');
 
-hatButtons.addEventListener('click', hatButtonEvents)
-
-
-
+hatButtons.addEventListener('click', hatButtonEvents);
 
 
 function hatButtonEvents() {
-  highlightHatButtons(event);
+  highlightHatButtons();
   addHat();
 }
 
 
-function highlightHatButtons(event) {
+function highlightHatButtons() {
 if (event.target.className === 'hat-button') {
   for (i = 0; i < hatNodeList.length; i++) {
     hatNodeList[i].classList.remove('selected')
@@ -37,10 +34,29 @@ if (event.target.className === 'hat-button') {
 
 
 function addHat() {
-  for(i = 0; i < hatNodeList: i++) {
-
-  };
+  // for (i = 0; i < hatImages.length; i++) {
+  //   if (event.target.className.contains('hat-button')) {
+  //   console.log('hats')
+  //   hatImages[i].style.display = 'none';
+  //   };
+  // };
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

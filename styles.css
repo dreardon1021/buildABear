@@ -151,7 +151,7 @@ img.bear-items {
   top: 5em;
   left: 13em;
   transform: rotate(21deg);
-  /* display: none; */
+  display: none;
   z-index: 1;
 }
 
