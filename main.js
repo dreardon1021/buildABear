@@ -8,11 +8,12 @@ var hatButtons = document.querySelector('.hat-button-container');
 var clothesButtons = document.querySelector('.clothes-button-container');
 var accessoriesButtons = document.querySelector('.accessories-button-container');
 var backgroundButtons = document.querySelector('.background-button-container');
+
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll( '.clothes-button');
 var accessoriesNodeList = document.querySelectorAll('.accessories-button');
 var backgroundNodeList = document.querySelectorAll('.background-button');
-var hatImages = document.querySelectorAll('.hats');
+var hatImages = document.querySelectorAll('.hat');
 
 hatButtons.addEventListener('click', hatButtonEvents);
 
@@ -34,12 +35,11 @@ if (event.target.className === 'hat-button') {
 
 
 function addHat() {
-  // for (i = 0; i < hatImages.length; i++) {
-  //   if (event.target.className.contains('hat-button')) {
-  //   console.log('hats')
-  //   hatImages[i].style.display = 'none';
-  //   };
-  // };
+  if (event.target.classList.contains('hat-button')) {
+      for (i = 0; i < hatImages.length; i++) {
+      hatImages[i].style.display = hatImages[i].style.display === '' ? 'none' : '';
+    };
+  };
   var clothingId = event.target.getAttribute('data-id');
   var clothingImage = document.querySelector(`.${clothingId}`);
   clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
