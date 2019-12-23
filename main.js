@@ -3,12 +3,12 @@ var outfit = new Outfit({id: generateRandomId()});
 function generateRandomId() {
   return Math.floor(Math.random() * 1000);
 }
-
+//button lists
 var hatButtons = document.querySelector('.hat-button-container');
 var clothesButtons = document.querySelector('.clothes-button-container');
 var accessoriesButtons = document.querySelector('.accessories-button-container');
 var backgroundButtons = document.querySelector('.background-button-container');
-
+// node lists
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll( '.clothes-button');
 var accessoriesNodeList = document.querySelectorAll('.accessories-button');
@@ -20,7 +20,7 @@ hatButtons.addEventListener('click', hatButtonEvents);
 
 function hatButtonEvents() {
   highlightHatButtons();
-  addHat();
+  addHat(event);
 }
 
 
@@ -34,10 +34,10 @@ if (event.target.className === 'hat-button') {
 };
 
 
-function addHat() {
+function addHat(event) {
   if (event.target.classList.contains('hat-button')) {
       for (i = 0; i < hatImages.length; i++) {
-      hatImages[i].style.display = hatImages[i].style.display === '' ? 'none' : '';
+      hatImages[i].style.display = (hatImages[i].style.display === 'block' ? 'none' : '');
     };
   };
   var clothingId = event.target.getAttribute('data-id');
