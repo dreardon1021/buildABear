@@ -195,12 +195,12 @@ img.bear-items {
 
 .dress {
   width: 21em;
-height: 19em;
-position: absolute;
-top: 10em;
-left: 3em;
-display: none;
-transform: rotate(7deg);
+  height: 19em;
+  position: absolute;
+  top: 10em;
+  left: 3em;
+  display: none;
+  transform: rotate(7deg);
 }
 
 .vest {
@@ -250,7 +250,7 @@ transform: rotate(7deg);
   top: 2em;
   display: none;
   transform: rotate(0deg);
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 /* Column 3 */
