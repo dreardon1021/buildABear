@@ -194,11 +194,11 @@ img.bear-items {
 }
 
 .dress {
-  width: 21em;
+width: 21em;
 height: 19em;
 position: absolute;
-top: 10em;
-left: 3em;
+top: 7.5em;
+left: 1.7em;
 display: none;
 transform: rotate(7deg);
 }
@@ -207,8 +207,8 @@ transform: rotate(7deg);
   width: 24em;
   height: 25em;
   position: absolute;
-  top: 7.5em;
-  left: 1.5em;
+  top: 5.1em;
+  left: 0.4em;
   display: none;
   transform: rotate(2deg);
 }
