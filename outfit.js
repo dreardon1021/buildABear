@@ -6,7 +6,11 @@ class Outfit {
     this.background = '';
 
   }
-  addGarments() {
-    this.garments.push();
+
+  addGarment(garment, garmetType) {
+    var garmentObj = {};
+    garmentObj[garmetType] = garment;
+    console.log('adding garment: ', garmentObj);
+    this.garments.push(garmentObj);
   }
 }
