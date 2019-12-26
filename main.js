@@ -19,6 +19,7 @@ var backgroundImages = document.querySelectorAll('.background')
 
 hatButtons.addEventListener('click', hatButtonEvents);
 clothesButtons.addEventListener('click', clothesButtonEvents)
+backgroundButtons.addEventListener('click', backgroundButtonEvents)
 
 
 function hatButtonEvents() {
@@ -29,6 +30,11 @@ function hatButtonEvents() {
 function clothesButtonEvents() {
   highlightClothesButtons(event);
   addCloththing(event);
+}
+
+function backgroundButtonEvents() {
+  highlightBackgroundButtons(event)
+  addBackground(event)
 }
 
 function highlightHatButtons(event) {
@@ -80,11 +86,22 @@ accessoriesButtons.addEventListener('click', function(event) {
   };
 });
 
-backgroundButtons.addEventListener('click', function(event) {
+function highlightBackgroundButtons(event) {
   if (event.target.className === 'background-button') {
     for (i = 0; i < backgroundNodeList.length; i++) {
       backgroundNodeList[i].classList.remove('selected')
     };
     event.target.classList.add('selected')
   };
-});
+};
+
+function addBackground(event) {
+  if (event.target.classList.contains('background-button')) {
+      for (i = 0; i < backgroundImages.length; i++) {
+      backgroundImages[i].style.display = (backgroundImages[i].style.display === 'block' ? 'none' : '');
+    };
+  };
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+};

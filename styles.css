@@ -115,7 +115,6 @@ img.bear-items {
   width: 96%;
   padding-top: 5em;
   border: 2mm ridge #6FE0E7;
-  background-color: white;
   max-width: 100%;
   z-index: 0;
 }
@@ -194,13 +193,13 @@ img.bear-items {
 }
 
 .dress {
-width: 21em;
-height: 19em;
-position: absolute;
-top: 7.5em;
-left: 1.7em;
-display: none;
-transform: rotate(7deg);
+  width: 21em;
+  height: 19em;
+  position: absolute;
+  top: 7.5em;
+  left: 1.7em;
+  display: none;
+  transform: rotate(7deg);
 }
 
 .vest {
@@ -214,42 +213,38 @@ transform: rotate(7deg);
 }
 
 .beach {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .hearts {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .outerspace {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .park {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
   z-index: -1;
 }
 
