@@ -16,9 +16,8 @@ var clothesButtons = document.querySelector('.clothes-button-container');
 var accessoriesButtons = document.querySelector('.accessories-button-container');
 var backgroundButtons = document.querySelector('.background-button-container');
 var saveButton = document.querySelector('.save');
-var saveCard = document.querySelector('.outfit-section');
+var savedOutfitsContainer = document.querySelector('.outfit-section');
 var saveInput = document.querySelector('.saveInput');
-var closeButton = document.querySelector('.close-button');
 var saveOutfitName = document.querySelector('.outfit');
 
 // node lists
@@ -31,29 +30,37 @@ var hatImages = document.querySelectorAll('.hat');
 // Event Handlers
 hatButtons.addEventListener('click', hatButtonEvents);
 saveButton.addEventListener('click', saveOutfit);
-closeButton.addEventListener('click', closeOutfitCard);
+savedOutfitsContainer.addEventListener('click', closeOutfitCard);
 
 // Outfit save cards
 function saveOutfit() {
+  if (saveInput.value == '') {
+    return;
+  }
   saveOutfitName = saveInput.value;
-  // if (saveInput)
-  console.log(saveOutfitName);
+  saveInput.value = '';
 }
 
 function closeOutfitCard(event) {
-  if(event.target.classList.contains('close-button')) {
-    event.target.parentNode.remove();
+  var target = event.target;
+  if(!target.classList.contains('close-button')) {
+    return;
   }
+
+  target.parentNode.remove();
+  console.log('cheese');
 }
 
-
-function hatButtonEvents() {
-  highlightHatButtons();
+function hatButtonEvents(event) {
+  var hatButton = event.target;
+  if(!hatButton.classList.contains('hat-button')){
+    return; // non-button clicked in hat container
+  }
+  highlightHatButtons(event);
   addHat(event);
 }
 
-
-function highlightHatButtons() {
+function highlightHatButtons(event) {
 if (event.target.className === 'hat-button') {
   for (i = 0; i < hatNodeList.length; i++) {
     hatNodeList[i].classList.remove('selected')
@@ -61,7 +68,6 @@ if (event.target.className === 'hat-button') {
   event.target.classList.add('selected')
   };
 };
-
 
 function addHat(event) {
   if (event.target.classList.contains('hat-button')) {
@@ -73,32 +79,6 @@ function addHat(event) {
   var clothingImage = document.querySelector(`.${clothingId}`);
   clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 clothesButtons.addEventListener('click', function(event) {
   if (event.target.className === 'clothes-button') {
