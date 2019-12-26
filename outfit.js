@@ -7,7 +7,8 @@ class Outfit {
 
   }
 
-  addGarments(garment) {
+  addGarment(garment) {
+    console.log('adding garment: ', garment);
     this.garments.push(garment);
   }
 }

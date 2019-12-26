@@ -6,10 +6,6 @@ function generateRandomId() {
 }
 console.log(outfit)
 
-function addHat() {
-outfit.addGarments('hat');
-}
-
 
 var hatButtons = document.querySelector('.hat-button-container');
 var clothesButtons = document.querySelector('.clothes-button-container');
@@ -39,6 +35,26 @@ function saveOutfit() {
   }
   saveOutfitName = saveInput.value;
   saveInput.value = '';
+  createOutfitCard(saveOutfitName);
+}
+
+// This function is creating a new child <div> element for the saved outfit
+// the img src and alt are the children of the div
+// add the newSavedOutfitCard (child) to the outfit-section div (parent) element
+// textnode is a child as well - it's the text that is entered into the save input
+function createOutfitCard(saveOutfitName){
+  const newSavedOutfitCard = document.createElement('div');
+  newSavedOutfitCard.classList.add('outfit');
+  const text = document.createTextNode(saveOutfitName);
+  const closeButton = document.createElement('img');
+  closeButton.classList.add('close-button');
+  closeButton.setAttribute('src','assets/close.svg');
+  closeButton.setAttribute('alt','closing X');
+
+  newSavedOutfitCard.appendChild(text);
+  newSavedOutfitCard.appendChild(closeButton);
+
+  savedOutfitsContainer.appendChild(newSavedOutfitCard);
 }
 
 function closeOutfitCard(event) {
@@ -46,9 +62,7 @@ function closeOutfitCard(event) {
   if(!target.classList.contains('close-button')) {
     return;
   }
-
   target.parentNode.remove();
-  console.log('cheese');
 }
 
 function hatButtonEvents(event) {
@@ -57,6 +71,9 @@ function hatButtonEvents(event) {
     return; // non-button clicked in hat container
   }
   highlightHatButtons(event);
+  var hatId = hatButton.getAttribute('data-id');
+  console.log(hatId);
+  outfit.addGarment({'hat':hatId});
   addHat(event);
 }
 
