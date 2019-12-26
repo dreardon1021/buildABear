@@ -53,6 +53,17 @@ button:hover {
   color: #6FE0E7;
 }
 
+.save {
+  background-color: #1F2D57;
+  color: #6FE0E7;
+}
+
+.save:disabled {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
 /* Column 1 */
 button:active {
   transform: translateY(5px);
