@@ -1,57 +1,174 @@
-// var outfit = new Outfit ('');
+// Outfit class instance
+var outfit = new Outfit(generateRandomId());
+
+function generateRandomId() {
+  return Math.floor(Math.random() * 1000);
+}
+console.log(outfit)
+
+
+var hatButtons = document.querySelector('.hat-button-container');
+var clothesButtons = document.querySelector('.clothes-button-container');
+var accessoriesButtons = document.querySelector('.accessories-button-container');
+var backgroundButtons = document.querySelector('.background-button-container');
+var saveButton = document.querySelector('.save');
+var savedOutfitsContainer = document.querySelector('.outfit-section');
+var saveInput = document.querySelector('.saveInput');
+var saveOutfitName = document.querySelector('.outfit');
+
+// node lists
 var hatNodeList = document.querySelectorAll('.hat-button');
-var clothesNodeList = document.querySelectorAll('.clothes-button')
-var accessoriesNodeList = document.querySelectorAll('.accessories-button')
-var backgroundNodeList = document.querySelectorAll('.background-button')
+var clothesNodeList = document.querySelectorAll( '.clothes-button');
+var accessoriesNodeList = document.querySelectorAll('.accessories-button');
+var backgroundNodeList = document.querySelectorAll('.background-button');
+var hatImages = document.querySelectorAll('.hat');
+var clothesImages = document.querySelectorAll('.clothing')
+var backgroundImages = document.querySelectorAll('.background')
 
-for(var i = 0; i < hatNodeList.length; i++) {
-  hatNodeList[i].addEventListener('click', highlightHatTarget)
+// Event Handlers
+hatButtons.addEventListener('click', hatButtonEvents);
+
+saveButton.addEventListener('click', saveOutfit);
+savedOutfitsContainer.addEventListener('click', closeOutfitCard);
+saveInput.addEventListener('input', enableSaveButton);
+
+
+//Enables the save button upon input 
+function enableSaveButton () {
+  if (saveInput.value != '') {
+    saveButton.disabled = false;
+  }
 }
 
-for(var i = 0; i < clothesNodeList.length; i++) {
-  clothesNodeList[i].addEventListener('click', highlightClothesTarget)
+// Outfit save cards
+function saveOutfit() {
+  if (saveInput.value == '') {
+    return;
+  }
+  saveOutfitName = saveInput.value;
+  saveInput.value = '';
+  createOutfitCard(saveOutfitName);
 }
 
-for(var i = 0; i < accessoriesNodeList.length; i++) {
-  accessoriesNodeList[i].addEventListener('click', highlightAccessoriesTarget)
+clothesButtons.addEventListener('click', clothesButtonEvents)
+backgroundButtons.addEventListener('click', backgroundButtonEvents)
+
+
+// This function is creating a new child <div> element for the saved outfit
+// the img src and alt are the children of the div
+// add the newSavedOutfitCard (child) to the outfit-section div (parent) element
+// textnode is a child as well - it's the text that is entered into the save input
+function createOutfitCard(saveOutfitName){
+  const newSavedOutfitCard = document.createElement('div');
+  newSavedOutfitCard.classList.add('outfit');
+  const text = document.createTextNode(saveOutfitName);
+  const closeButton = document.createElement('img');
+  closeButton.classList.add('close-button');
+  closeButton.setAttribute('src','assets/close.svg');
+  closeButton.setAttribute('alt','closing X');
+
+  newSavedOutfitCard.appendChild(text);
+  newSavedOutfitCard.appendChild(closeButton);
+
+  savedOutfitsContainer.appendChild(newSavedOutfitCard);
 }
 
-for(var i = 0; i < backgroundNodeList.length; i++) {
-  backgroundNodeList[i].addEventListener('click', highlightBackgroundTarget)
+function closeOutfitCard(event) {
+  var target = event.target;
+  if(!target.classList.contains('close-button')) {
+    return;
+  }
+  target.parentNode.remove();
 }
 
-function highlightHatTarget(event) {
+function hatButtonEvents(event) {
+  var hatButton = event.target;
+  if(!hatButton.classList.contains('hat-button')){
+    return; // non-button clicked in hat container
+  }
+
+  highlightHatButtons(event);
+  var hatId = hatButton.getAttribute('data-id');
+  outfit.addGarment(hatId, 'hat');
+  addHat(event);
+}
+
+function clothesButtonEvents() {
+  highlightClothesButtons(event);
+  addCloththing(event);
+}
+
+function backgroundButtonEvents() {
+  highlightBackgroundButtons(event)
+  addBackground(event)
+}
+
+function highlightHatButtons(event) {
+if (event.target.className === 'hat-button') {
   for (i = 0; i < hatNodeList.length; i++) {
     hatNodeList[i].classList.remove('selected')
-  };
-  if(event.target.classList.contains('hat-button')) {
-    event.target.classList.add('selected');
-  };
-};
-
-function highlightClothesTarget(event) {
-  for (i = 0; i < clothesNodeList.length; i++) {
-    clothesNodeList[i].classList.remove('selected')
-  };
-  if(event.target.classList.contains('clothes-button')) {
-    event.target.classList.add('selected');
+    };
+  event.target.classList.add('selected')
   };
 };
 
-function highlightAccessoriesTarget(event) {
-  for (i = 0; i < accessoriesNodeList.length; i++) {
-    accessoriesNodeList[i].classList.remove('selected')
+function addHat(event) {
+  if (event.target.classList.contains('hat-button')) {
+      for (i = 0; i < hatImages.length; i++) {
+      hatImages[i].style.display = (hatImages[i].style.display === 'block' ? 'none' : '');
+    };
   };
-  if(event.target.classList.contains('accessories-button')) {
-    event.target.classList.add('selected');
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+};
+
+function highlightClothesButtons(event) {
+  console.log(event);
+  if (event.target.className === 'clothes-button') {
+    for (i = 0; i < clothesNodeList.length; i++) {
+      clothesNodeList[i].classList.remove('selected')
+    };
+    event.target.classList.add('selected')
   };
 };
 
-function highlightBackgroundTarget(event) {
-  for (i = 0; i < backgroundNodeList.length; i++) {
-    backgroundNodeList[i].classList.remove('selected')
+function addCloththing(event) {
+  if (event.target.classList.contains('clothes-button')) {
+      for (i = 0; i < clothesImages.length; i++) {
+      clothesImages[i].style.display = (clothesImages[i].style.display === 'block' ? 'none' : '');
+    };
   };
-  if(event.target.classList.contains('background-button')) {
-    event.target.classList.add('selected');
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+}
+
+accessoriesButtons.addEventListener('click', function(event) {
+  if (event.target.className === 'accessories-button') {
+    for (i = 0; i < accessoriesNodeList.length; i++) {
+      accessoriesNodeList[i].classList.remove('selected')
+    };
+    event.target.classList.add('selected')
   };
+});
+
+function highlightBackgroundButtons(event) {
+  if (event.target.className === 'background-button') {
+    for (i = 0; i < backgroundNodeList.length; i++) {
+      backgroundNodeList[i].classList.remove('selected')
+    };
+    event.target.classList.add('selected')
+  };
+};
+
+function addBackground(event) {
+  if (event.target.classList.contains('background-button')) {
+      for (i = 0; i < backgroundImages.length; i++) {
+      backgroundImages[i].style.display = (backgroundImages[i].style.display === 'block' ? 'none' : '');
+    };
+  };
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
 };

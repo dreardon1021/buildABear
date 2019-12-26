@@ -19,61 +19,68 @@
       <h3>Outfits</h3>
       <div class="col-content">
         <h4 class="col1-headers">Hats</h4>
-        <div class="col1-buttons">
-          <button class="hat-button" type="button" name="button">Top Hat</button>
-          <button class="hat-button" type="button" name="button">Sun Hat</button>
-          <button class="hat-button" type="button" name="button">Space Helmet</button>
-          <button class="hat-button" type="button" name="button">Hair Bow</button>
-          <button class="hat-button" type="button" name="button">Crown</button>
+        <div class="col1-buttons hat-button-container">
+          <button data-id="top-hat" class="hat-button" type="button" name="button">Top Hat</button>
+          <button data-id="sun-hat" class="hat-button" type="button" name="button">Sun Hat</button>
+          <button data-id="space-helmet" class="hat-button" type="button" name="button">Space Helmet</button>
+          <button data-id="hair-bow" class="hat-button" type="button" name="button">Hair Bow</button>
+          <button data-id="crown" class="hat-button" type="button" name="button">Crown</button>
         </div>
         <h4 class="col1-headers">Clothes</h4>
-        <div class="col1-buttons">
-          <button class="clothes-button" type="button" name="button">Dress</button>
-          <button class="clothes-button" type="button" name="button">Vest</button>
+        <div class="col1-buttons clothes-button-container">
+          <button data-id="dress" class="clothes-button" type="button" name="button">Dress</button>
+          <button data-id="vest" class="clothes-button" type="button" name="button">Vest</button>
         </div>
         <h4 class="col1-headers">Accessories</h4>
-        <div class="col1-buttons">
+        <div class="col1-buttons accessories-button-container">
           <button class="accessories-button" type="button" name="button">Bowtie</button>
           <button class="accessories-button" type="button" name="button">Necklace</button>
           <button class="accessories-button" type="button" name="button">Smart Watch</button>
           <button class="accessories-button" type="button" name="button">Sunglasses</button>
         </div>
         <h4 class="col1-headers">Backgrounds</h4>
-        <div class="col1-buttons">
-          <button class="background-button" type="button" name="button">Beach</button>
-          <button class="background-button" type="button" name="button">Hearts</button>
-          <button class="background-button" type="button" name="button">Outerspace</button>
-          <button class="background-button" type="button" name="button">Park</button>
+        <div class="col1-buttons background-button-container">
+          <button data-id="beach" class="background-button" type="button" name="button">Beach</button>
+          <button data-id="hearts" class="background-button" type="button" name="button">Hearts</button>
+          <button data-id="outerspace" class="background-button" type="button" name="button">Outerspace</button>
+          <button data-id="park" class="background-button" type="button" name="button">Park</button>
         </div>
       </div>
     </section>
     <section class="col2">
       <div class="bear-images">
         <img class="bear-items" src="assets/bear.png" alt="bear">
-        <img class="top-hat" src="assets/tophat.png" alt="top-hat">
-        <img class="sun-hat" src="assets/sunhat.png" alt="sun-hat">
-        <img class="space-helmet" src="assets/spacehelmet.png" alt="space-helmet">
-        <img class="hair-bow" src="assets/hairbow.png" alt="hair-bow">
-        <img class="crown" src="assets/crown.png" alt="crown">
-        <img class="dress" src="assets/dress.png" alt="dress">
-        <img class="vest" src="assets/vest.png" alt="vest">
-        <img class="beach" src="assets/beach.png" alt="beach">
-        <img class="hearts" src="assets/hearts.png" alt="hearts">
-        <img class="outerspace" src="assets/outerspace.png" alt="outerspace">
-        <img class="park" src="assets/park.png" alt="park">
-        <img class="bowtie" src="assets/bowtie.png" alt="bowtie">
-        <img class="necklace" src="assets/necklace.png" alt="necklace">
-        <img class="smartwatch" src="assets/smartwatch.png" alt="smartwatch">
-        <img class="sunglasses" src="assets/sunglasses.png" alt="sunglasses">
-      </div>
+        <div class="hats">
+          <img class="top-hat hat" src="assets/tophat.png" alt="top-hat">
+          <img class="sun-hat hat" src="assets/sunhat.png" alt="sun-hat">
+          <img class="space-helmet hat" src="assets/spacehelmet.png" alt="space-helmet">
+          <img class="hair-bow hat" src="assets/hairbow.png" alt="hair-bow">
+          <img class="crown hat" src="assets/crown.png" alt="crown">
+        </div>
+        <div class="clothes">
+          <img class="dress clothing" src="assets/dress.png" alt="dress">
+          <img class="vest clothing" src="assets/vest.png" alt="vest">
+        </div>
+        <div>
+          <img class="bowtie" src="assets/bowtie.png" alt="bowtie">
+          <img class="necklace" src="assets/necklace.png" alt="necklace">
+          <img class="smartwatch" src="assets/smartwatch.png" alt="smartwatch">
+          <img class="sunglasses" src="assets/sunglasses.png" alt="sunglasses">
+          <div class="backgrounds">
+         </div>
+          <img class="beach background" src="assets/beach.png" alt="beach">
+          <img class="hearts background" src="assets/hearts.png" alt="hearts">
+          <img class="outerspace background" src="assets/outerspace.png" alt="outerspace">
+          <img class="park background" src="assets/park.png" alt="park">
+        </div>
       <div class="col2-inputs">
-        <input type="text" name="" value="Name Your Outfit">
-        <button type="button" name="button">Save!</button>
+        <input class="saveInput" type="text" name="" placeholder="Name Your Outfit">
+        <button disabled class="save" type="button" name="button">Save!</button>
       </div>
     </section>
     <section class="col3">
       <h3>Saved Outfits</h3>
-      <div class="col3-contetn">
+      <div class="col3-content">
         <div class="outfit-section">
           <div class="outfit">Fancy<img src="assets/close.svg" alt="closing X" class="close-button">
           </div>
