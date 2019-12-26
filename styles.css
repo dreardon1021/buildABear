@@ -115,7 +115,6 @@ img.bear-items {
   width: 96%;
   padding-top: 5em;
   border: 2mm ridge #6FE0E7;
-  background-color: white;
   max-width: 100%;
   z-index: 0;
 }
@@ -197,8 +196,8 @@ img.bear-items {
   width: 21em;
   height: 19em;
   position: absolute;
-  top: 10em;
-  left: 3em;
+  top: 7.5em;
+  left: 1.7em;
   display: none;
   transform: rotate(7deg);
 }
@@ -207,50 +206,46 @@ img.bear-items {
   width: 24em;
   height: 25em;
   position: absolute;
-  top: 7.5em;
-  left: 1.5em;
+  top: 5.1em;
+  left: 0.4em;
   display: none;
   transform: rotate(2deg);
 }
 
 .beach {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .hearts {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .outerspace {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .park {
-  width: 26em;
-  height: 31em;
+  width: 24.9em;
+  height: 29.9em;
   position: absolute;
-  top: 2em;
+  top: 0em;
   display: none;
-  transform: rotate(0deg);
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 /* Column 3 */
