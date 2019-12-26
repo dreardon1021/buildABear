@@ -30,6 +30,15 @@ hatButtons.addEventListener('click', hatButtonEvents);
 
 saveButton.addEventListener('click', saveOutfit);
 savedOutfitsContainer.addEventListener('click', closeOutfitCard);
+saveInput.addEventListener('input', enableSaveButton);
+
+
+//Enables the save button upon input 
+function enableSaveButton () {
+  if (saveInput.value != '') {
+    saveButton.disabled = false;
+  }
+}
 
 // Outfit save cards
 function saveOutfit() {
