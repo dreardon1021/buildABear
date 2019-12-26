@@ -73,7 +73,7 @@ function hatButtonEvents(event) {
   highlightHatButtons(event);
   var hatId = hatButton.getAttribute('data-id');
   console.log(hatId);
-  outfit.addGarment({'hat':hatId});
+  outfit.addGarment(hatId, 'hat');
   addHat(event);
 }
 

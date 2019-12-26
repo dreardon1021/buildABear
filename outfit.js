@@ -7,8 +7,10 @@ class Outfit {
 
   }
 
-  addGarment(garment) {
-    console.log('adding garment: ', garment);
-    this.garments.push(garment);
+  addGarment(garment, garmetType) {
+    var garmentObj = {};
+    garmentObj[garmetType] = garment;
+    console.log('adding garment: ', garmentObj);
+    this.garments.push(garmentObj);
   }
 }
