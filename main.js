@@ -4,37 +4,66 @@ var outfit = new Outfit(generateRandomId());
 function generateRandomId() {
   return Math.floor(Math.random() * 1000);
 }
-console.log(outfit)
 
-
+//clothing button containers
 var hatButtons = document.querySelector('.hat-button-container');
 var clothesButtons = document.querySelector('.clothes-button-container');
 var accessoriesButtons = document.querySelector('.accessories-button-container');
 var backgroundButtons = document.querySelector('.background-button-container');
+//outfit items
 var saveButton = document.querySelector('.save');
 var savedOutfitsContainer = document.querySelector('.outfit-section');
 var saveInput = document.querySelector('.saveInput');
 var saveOutfitName = document.querySelector('.outfit');
-
 // node lists
 var hatNodeList = document.querySelectorAll('.hat-button');
 var clothesNodeList = document.querySelectorAll( '.clothes-button');
 var accessoriesNodeList = document.querySelectorAll('.accessories-button');
 var backgroundNodeList = document.querySelectorAll('.background-button');
+//image lists
 var hatImages = document.querySelectorAll('.hat');
 var clothesImages = document.querySelectorAll('.clothing')
+var accessoriesImages = document.querySelectorAll('.accessory')
 var backgroundImages = document.querySelectorAll('.background')
 
-// Event Handlers
+// Event Listeners
 hatButtons.addEventListener('click', hatButtonEvents);
-
+clothesButtons.addEventListener('click', clothesButtonEvents)
+accessoriesButtons.addEventListener('click', accessoriesButtonEvents)
+backgroundButtons.addEventListener('click', backgroundButtonEvents)
 saveButton.addEventListener('click', saveOutfit);
 savedOutfitsContainer.addEventListener('click', closeOutfitCard);
 saveInput.addEventListener('input', enableSaveButton);
 
+//Event Handelers
+function hatButtonEvents(event) {
+  var hatButton = event.target;
+  if(!hatButton.classList.contains('hat-button')){
+    return; // non-button clicked in hat container
+  }
+  var hatId = hatButton.getAttribute('data-id');
+  outfit.addGarment(hatId, 'hat');
+  highlightHatButtons(event);
+  addHat(event);
+}
 
-//Enables the save button upon input 
-function enableSaveButton () {
+function clothesButtonEvents() {
+  highlightClothesButtons(event);
+  addCloththing(event);
+}
+
+function backgroundButtonEvents() {
+  highlightBackgroundButtons(event)
+  addBackground(event)
+}
+
+function accessoriesButtonEvents() {
+  highlightAccessoriesButtons(event)
+  addAccessory(event)
+}
+
+//Enables the save button upon input
+function enableSaveButton() {
   if (saveInput.value != '') {
     saveButton.disabled = false;
   }
@@ -50,10 +79,6 @@ function saveOutfit() {
   createOutfitCard(saveOutfitName);
 }
 
-clothesButtons.addEventListener('click', clothesButtonEvents)
-backgroundButtons.addEventListener('click', backgroundButtonEvents)
-
-
 // This function is creating a new child <div> element for the saved outfit
 // the img src and alt are the children of the div
 // add the newSavedOutfitCard (child) to the outfit-section div (parent) element
@@ -66,10 +91,8 @@ function createOutfitCard(saveOutfitName){
   closeButton.classList.add('close-button');
   closeButton.setAttribute('src','assets/close.svg');
   closeButton.setAttribute('alt','closing X');
-
   newSavedOutfitCard.appendChild(text);
   newSavedOutfitCard.appendChild(closeButton);
-
   savedOutfitsContainer.appendChild(newSavedOutfitCard);
 }
 
@@ -77,38 +100,16 @@ function closeOutfitCard(event) {
   var target = event.target;
   if(!target.classList.contains('close-button')) {
     return;
-  }
+  };
   target.parentNode.remove();
-}
-
-function hatButtonEvents(event) {
-  var hatButton = event.target;
-  if(!hatButton.classList.contains('hat-button')){
-    return; // non-button clicked in hat container
-  }
-
-  highlightHatButtons(event);
-  var hatId = hatButton.getAttribute('data-id');
-  outfit.addGarment(hatId, 'hat');
-  addHat(event);
-}
-
-function clothesButtonEvents() {
-  highlightClothesButtons(event);
-  addCloththing(event);
-}
-
-function backgroundButtonEvents() {
-  highlightBackgroundButtons(event)
-  addBackground(event)
-}
+};
 
 function highlightHatButtons(event) {
 if (event.target.className === 'hat-button') {
   for (i = 0; i < hatNodeList.length; i++) {
-    hatNodeList[i].classList.remove('selected')
+    hatNodeList[i].classList.remove('selected');
     };
-  event.target.classList.add('selected')
+  event.target.classList.add('selected');
   };
 };
 
@@ -124,12 +125,11 @@ function addHat(event) {
 };
 
 function highlightClothesButtons(event) {
-  console.log(event);
   if (event.target.className === 'clothes-button') {
     for (i = 0; i < clothesNodeList.length; i++) {
-      clothesNodeList[i].classList.remove('selected')
+      clothesNodeList[i].classList.remove('selected');
     };
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   };
 };
 
@@ -144,21 +144,33 @@ function addCloththing(event) {
   clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
 }
 
-accessoriesButtons.addEventListener('click', function(event) {
+
+function highlightAccessoriesButtons(event) {
   if (event.target.className === 'accessories-button') {
     for (i = 0; i < accessoriesNodeList.length; i++) {
-      accessoriesNodeList[i].classList.remove('selected')
+      accessoriesNodeList[i].classList.remove('selected');
     };
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   };
-});
+};
+
+function addAccessory(event) {
+  if (event.target.classList.contains('accessories-button')) {
+      for (i = 0; i < accessoriesImages.length; i++) {
+      accessoriesImages[i].style.display = (accessoriesImages[i].style.display === 'block' ? 'none' : '');
+    };
+  };
+  var clothingId = event.target.getAttribute('data-id');
+  var clothingImage = document.querySelector(`.${clothingId}`);
+  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+};
 
 function highlightBackgroundButtons(event) {
   if (event.target.className === 'background-button') {
     for (i = 0; i < backgroundNodeList.length; i++) {
-      backgroundNodeList[i].classList.remove('selected')
+      backgroundNodeList[i].classList.remove('selected');
     };
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   };
 };
 
