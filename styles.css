@@ -143,7 +143,7 @@ img.bear-items {
 
 .col2 input {
   align-self: center;
-  width: 70%;
+  width: 30em;
   height: 2.5em;
 }
 
@@ -156,7 +156,7 @@ img.bear-items {
   left: 13em;
   transform: rotate(21deg);
   display: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .sun-hat {
@@ -178,7 +178,7 @@ img.bear-items {
   left: 7.3em;
   transform: rotate(14deg);
   display: none;
-  z-index: 3;
+  z-index: 1;
 }
 
 .hair-bow {
@@ -266,6 +266,7 @@ img.bear-items {
   width: 6em;
   transform: rotate(15deg);
   display: none;
+  z-index: 4;
 }
 
 .necklace {
