@@ -3,7 +3,7 @@ var outfit = new Outfit(generateRandomId());
 
 function generateRandomId() {
   return Math.floor(Math.random() * 1000);
-}
+};
 
 //clothing button containers
 var hatButtons = document.querySelector('.hat-button-container');
@@ -22,30 +22,36 @@ var accessoriesNodeList = document.querySelectorAll('.accessories-button');
 var backgroundNodeList = document.querySelectorAll('.background-button');
 //image lists
 var hatImages = document.querySelectorAll('.hat');
-var clothesImages = document.querySelectorAll('.clothing')
-var accessoriesImages = document.querySelectorAll('.accessory')
-var backgroundImages = document.querySelectorAll('.background')
+var clothesImages = document.querySelectorAll('.clothing');
+var accessoriesImages = document.querySelectorAll('.accessory');
+var backgroundImages = document.querySelectorAll('.background');
 
 // Event Listeners
 hatButtons.addEventListener('click', hatButtonEvents);
-clothesButtons.addEventListener('click', clothesButtonEvents)
-accessoriesButtons.addEventListener('click', accessoriesButtonEvents)
-backgroundButtons.addEventListener('click', backgroundButtonEvents)
-saveButton.addEventListener('click', saveOutfit);
+clothesButtons.addEventListener('click', clothesButtonEvents);
+accessoriesButtons.addEventListener('click', accessoriesButtonEvents);
+backgroundButtons.addEventListener('click', backgroundButtonEvents);
+saveButton.addEventListener('click', saveButtonEvents);
 savedOutfitsContainer.addEventListener('click', closeOutfitCard);
 saveInput.addEventListener('input', enableSaveButton);
 
 //Event Handelers
+function saveButtonEvents() {
+  saveOutfit();
+  resetBearItemsOnSave()
+  resetButtonsOnSave();
+};
+
 function hatButtonEvents(event) {
   var hatButton = event.target;
   if(!hatButton.classList.contains('hat-button')){
     return; // non-button clicked in hat container
-  }
+  };
   var hatId = hatButton.getAttribute('data-id');
   outfit.addGarment(hatId, 'hat');
   highlightHatButtons(event);
   addHat(event);
-}
+};
 
 function clothesButtonEvents() {
   var clothesButton = event.target;
@@ -56,7 +62,7 @@ function clothesButtonEvents() {
   outfit.addGarment(clothesId, 'clothing')
   highlightClothesButtons(event);
   addCloththing(event);
-}
+};
 
 function backgroundButtonEvents() {
   var backgroundButton = event.target;
@@ -77,25 +83,59 @@ function accessoriesButtonEvents() {
   var accesoriesId = accessoriesButton.getAttribute('data-id')
   outfit.addGarment(accesoriesId, 'accesories')
   highlightAccessoriesButtons(event)
-  addAccessory(event)
-}
+  addAccessory(event);
+};
 
 //Enables the save button upon input
 function enableSaveButton() {
   if (saveInput.value != '') {
     saveButton.disabled = false;
-  }
-}
+  };
+};
 
 // Outfit save cards
 function saveOutfit() {
   if (saveInput.value == '') {
     return;
-  }
+  };
   saveOutfitName = saveInput.value;
   saveInput.value = '';
   createOutfitCard(saveOutfitName);
-}
+};
+
+function resetBearItemsOnSave() {
+  if (event.target.classList.contains('save')) {
+      for (i = 0; i < hatImages.length; i++) {
+        hatImages[i].style.display = (hatImages[i].style.display === 'block' ? 'none' : '');
+    };
+      for (i = 0; i < clothesImages.length; i++) {
+        clothesImages[i].style.display = (clothesImages[i].style.display === 'block' ? 'none' : '');
+    };
+      for (i = 0; i < accessoriesImages.length; i++) {
+        accessoriesImages[i].style.display = (accessoriesImages[i].style.display === 'block' ? 'none' : '');
+    };
+      for (i = 0; i < backgroundImages.length; i++) {
+        backgroundImages[i].style.display = (backgroundImages[i].style.display === 'block' ? 'none' : '');
+    };
+  };
+};
+
+function resetButtonsOnSave() {
+  if (event.target.classList.contains('save')) {
+    for (i = 0; i < hatNodeList.length; i++) {
+      hatNodeList[i].classList.remove('selected');
+    };
+    for (i = 0; i < clothesNodeList.length; i++) {
+      clothesNodeList[i].classList.remove('selected');
+    };
+    for (i = 0; i < accessoriesNodeList.length; i++) {
+      accessoriesNodeList[i].classList.remove('selected');
+    };
+    for (i = 0; i < backgroundNodeList.length; i++) {
+      backgroundNodeList[i].classList.remove('selected');
+    };
+  };
+};
 
 // This function is creating a new child <div> element for the saved outfit
 // the img src and alt are the children of the div
@@ -112,7 +152,7 @@ function createOutfitCard(saveOutfitName){
   newSavedOutfitCard.appendChild(text);
   newSavedOutfitCard.appendChild(closeButton);
   savedOutfitsContainer.appendChild(newSavedOutfitCard);
-}
+};
 
 function closeOutfitCard(event) {
   var target = event.target;
@@ -160,8 +200,7 @@ function addCloththing(event) {
   var clothingId = event.target.getAttribute('data-id');
   var clothingImage = document.querySelector(`.${clothingId}`);
   clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
-}
-
+};
 
 function highlightAccessoriesButtons(event) {
   if (event.target.className === 'accessories-button') {
