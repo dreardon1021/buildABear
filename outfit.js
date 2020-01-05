@@ -1,3 +1,5 @@
+var garmentObj = {};
+
 class Outfit {
   constructor(id, garments, title, background) {
     this.id = id;
@@ -8,9 +10,8 @@ class Outfit {
   }
 
   addGarment(garment, garmetType) {
-    var garmentObj = {};
     garmentObj[garmetType] = garment;
-    console.log('adding garment: ', garmentObj);
     this.garments.push(garmentObj);
+    console.log('adding garment: ', garmentObj);
   }
 }
