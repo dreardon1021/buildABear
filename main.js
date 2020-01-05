@@ -54,17 +54,35 @@ function hatButtonEvents(event) {
 };
 
 function clothesButtonEvents() {
+  var clothesButton = event.target;
+  if(!clothesButton.classList.contains('clothes-button')){
+    return; // non-button clicked in clothes container
+  }
+  var clothesId = clothesButton.getAttribute('data-id')
+  outfit.addGarment(clothesId, 'clothing')
   highlightClothesButtons(event);
   addCloththing(event);
 };
 
 function backgroundButtonEvents() {
-  highlightBackgroundButtons(event);
-  addBackground(event);
-};
+  var backgroundButton = event.target;
+  if(!backgroundButton.classList.contains('background-button')){
+    return; // non-button clicked in background container
+  }
+  var backgroundId = backgroundButton.getAttribute('data-id')
+  outfit.addGarment(backgroundId, 'background')
+  highlightBackgroundButtons(event)
+  addBackground(event)
+}
 
 function accessoriesButtonEvents() {
-  highlightAccessoriesButtons(event);
+  var accessoriesButton = event.target;
+  if(!accessoriesButton.classList.contains('accessories-button')){
+    return;
+  }
+  var accesoriesId = accessoriesButton.getAttribute('data-id')
+  outfit.addGarment(accesoriesId, 'accesories')
+  highlightAccessoriesButtons(event)
   addAccessory(event);
 };
 
