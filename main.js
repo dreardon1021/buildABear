@@ -94,7 +94,6 @@ function accessoriesButtonEvents() {
   addAccessory(event);
 };
 
-
 function dressBearHandeler() {
   grabBearObjOnClick();
 }
@@ -163,15 +162,15 @@ function saveOutfit() {
   var outfitTitle = outfit.title
   saveInput.value = '';
   var outfitJson = JSON.stringify(outfit);
-  localStorage.setItem(outfit.title, outfitJson);
+  window.localStorage.setItem(outfit.title, outfitJson);
   createOutfitCard(outfitTitle);
 };
 
 
 function loadOutfit() {
-  for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i)
-    var getValue = localStorage.getItem(key);
+  for (var i = 0; i < window.localStorage.length; i++) {
+    var key = window.localStorage.key(i)
+    var getValue = window.localStorage.getItem(key);
     var parseOutfit = JSON.parse(getValue);
     outfit = parseOutfit
     var outfitTitle = outfit.title
@@ -185,10 +184,10 @@ function closeOutfitCard(event) {
   if(!target.classList.contains('close-button')) {
     return;
   };
-  for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i);
+  for (var i = 0; i < window.localStorage.length; i++) {
+    var key = window.localStorage.key(i);
     if (target.parentNode.classList.contains(key)) {
-    localStorage.removeItem(key);
+    window.localStorage.removeItem(key);
     };
   };
   target.parentNode.remove();
@@ -196,10 +195,10 @@ function closeOutfitCard(event) {
 
 function grabBearObjOnClick() {
   var clickedCard = event.target.classList.contains('outfit')
-  for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i);
+  for (var i = 0; i < window.localStorage.length; i++) {
+    var key = window.localStorage.key(i);
     if (clickedCard && event.target.classList.contains(key)){
-      var retrivedObject = localStorage.getItem(key)
+      var retrivedObject = window.localStorage.getItem(key)
       var bearOutfit = JSON.parse(retrivedObject);
       saveInput.value = bearOutfit.title;
       dressBearHat(bearOutfit)
