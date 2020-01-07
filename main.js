@@ -129,13 +129,18 @@ function resetButtonsOnSave() {
   };
 };
 
+<<<<<<< Updated upstream
 // This function is creating a new child <div> element for the saved outfit
 // the img src and alt are the children of the div
 // add the newSavedOutfitCard (child) to the outfit-section div (parent) element
 // textnode is a child as well - it's the text that is entered into the save input
 function createOutfitCard(saveOutfitName){
+=======
+function createOutfitCard(saveOutfitName) {
+>>>>>>> Stashed changes
   const newSavedOutfitCard = document.createElement('div');
   newSavedOutfitCard.classList.add('outfit');
+  newSavedOutfitCard.classList.add(outfit.title);
   const text = document.createTextNode(saveOutfitName);
   const closeButton = document.createElement('img');
   closeButton.classList.add('close-button');
@@ -164,6 +169,7 @@ function saveOutfit() {
   createOutfitCard(outfit.title);
 };
 
+<<<<<<< Updated upstream
 
 function loadOutfit(id){
   var outfitJson = localStorage.getItem(id);
@@ -173,17 +179,31 @@ function loadOutfit(id){
   var outfit = JSON.parse(outfitJson);
   createOutfitCard(outfit.title);
 }
-
-// function parsedCards(keyName) {
-//   var grabCard = localStorage.getItem(keyName);
-//   var parsedCard = JSON.parse(grabCard);
-//   createOutfitCard(parsedCard)
-// }
+=======
+function loadOutfit() {
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i)
+    var getValue = localStorage.getItem(key);
+    var parseOutfit = JSON.parse(getValue);
+    // console.log(parseOutfit)
+    outfit = parseOutfit
+    var outfitTitle = outfit.title
+    createOutfitCard(outfitTitle);
+    outfit = new Outfit(generateRandomId())
+  };
+};
+>>>>>>> Stashed changes
 
 function closeOutfitCard(event) {
   var target = event.target;
   if(!target.classList.contains('close-button')) {
     return;
+  };
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (target.parentNode.classList.contains(key)) {
+    localStorage.removeItem(key);
+    };
   };
   target.parentNode.remove();
 };
