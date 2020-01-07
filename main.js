@@ -140,6 +140,7 @@ function resetButtonsOnSave() {
 function createOutfitCard(saveOutfitName) {
   const newSavedOutfitCard = document.createElement('div');
   newSavedOutfitCard.classList.add('outfit');
+  newSavedOutfitCard.classList.add(outfit.title);
   const text = document.createTextNode(saveOutfitName);
   const closeButton = document.createElement('img');
   closeButton.classList.add('close-button');
@@ -170,25 +171,23 @@ function loadOutfit() {
     var key = localStorage.key(i)
     var getValue = localStorage.getItem(key);
     var parseOutfit = JSON.parse(getValue);
-    // console.log(parseOutfit)
     outfit = parseOutfit
-    console.log(outfit)
     var outfitTitle = outfit.title
     createOutfitCard(outfitTitle);
     outfit = new Outfit(generateRandomId())
   };
 };
 
-// function parsedCards(keyName) {
-//   var grabCard = localStorage.getItem(keyName);
-//   var parsedCard = JSON.parse(grabCard);
-//   createOutfitCard(parsedCard)
-// }
-
 function closeOutfitCard(event) {
   var target = event.target;
   if(!target.classList.contains('close-button')) {
     return;
+  };
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (target.parentNode.classList.contains(key)) {
+    localStorage.removeItem(key);
+    };
   };
   target.parentNode.remove();
 };
