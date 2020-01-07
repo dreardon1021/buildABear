@@ -69,10 +69,6 @@ button:active {
   transform: translateY(5px);
 }
 
-button:active {
-  transform: translateY(5px);
-}
-
 .selected {
   background-color: #1F2D57;
   color: #6FE0E7;
@@ -314,6 +310,10 @@ img.bear-items {
   width: 100%;
   border-radius: .5em;
   box-shadow: 5px 5px 10px 0px #1F2D57;
+}
+
+.outfit:active {
+  transform: translateY(5px);
 }
 
 .close-button {
