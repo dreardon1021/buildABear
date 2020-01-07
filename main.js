@@ -40,6 +40,7 @@ function saveButtonEvents() {
   saveOutfit();
   resetBearItemsOnSave()
   resetButtonsOnSave();
+  var outfit = new Outfit(generateRandomId());
 };
 
 function hatButtonEvents(event) {
@@ -93,15 +94,6 @@ function enableSaveButton() {
   };
 };
 
-// Outfit save cards
-function saveOutfit() {
-  if (saveInput.value == '') {
-    return;
-  };
-  saveOutfitName = saveInput.value;
-  saveInput.value = '';
-  createOutfitCard(saveOutfitName);
-};
 
 function resetBearItemsOnSave() {
   if (event.target.classList.contains('save')) {
@@ -153,6 +145,40 @@ function createOutfitCard(saveOutfitName){
   newSavedOutfitCard.appendChild(closeButton);
   savedOutfitsContainer.appendChild(newSavedOutfitCard);
 };
+
+// Outfit save cards
+function saveOutfit() {
+  if (saveInput.value == '') {
+    return;
+  };
+  outfit.title = saveInput.value;
+  // took outfit.title from class because title is already being created there
+  saveInput.value = '';
+
+  var outfitJson = JSON.stringify(outfit);
+  // can stringify the outfit because it is already json friendly
+  localStorage.setItem(outfit.id, outfitJson);
+  // using the outfit.id as the key because that "should" be uniquie for all outfits
+  console.log(outfitJson);
+
+  createOutfitCard(outfit.title);
+};
+
+
+function loadOutfit(id){
+  var outfitJson = localStorage.getItem(id);
+  if(!outfitJson){
+    return;
+  }
+  var outfit = JSON.parse(outfitJson);
+  createOutfitCard(outfit.title);
+}
+
+// function parsedCards(keyName) {
+//   var grabCard = localStorage.getItem(keyName);
+//   var parsedCard = JSON.parse(grabCard);
+//   createOutfitCard(parsedCard)
+// }
 
 function closeOutfitCard(event) {
   var target = event.target;
