@@ -35,12 +35,16 @@ saveButton.addEventListener('click', saveButtonEvents);
 savedOutfitsContainer.addEventListener('click', closeOutfitCard);
 saveInput.addEventListener('input', enableSaveButton);
 
+window.onload = function () {
+  loadOutfit();
+};
+
 //Event Handelers
 function saveButtonEvents() {
   saveOutfit();
   resetBearItemsOnSave()
   resetButtonsOnSave();
-  var outfit = new Outfit(generateRandomId());
+  outfit = new Outfit(generateRandomId());
 };
 
 function hatButtonEvents(event) {
@@ -57,7 +61,7 @@ function hatButtonEvents(event) {
 function clothesButtonEvents() {
   var clothesButton = event.target;
   if(!clothesButton.classList.contains('clothes-button')){
-    return; // non-button clicked in clothes container
+    return;
   }
   var clothesId = clothesButton.getAttribute('data-id')
   outfit.addGarment(clothesId, 'clothing')
@@ -68,7 +72,7 @@ function clothesButtonEvents() {
 function backgroundButtonEvents() {
   var backgroundButton = event.target;
   if(!backgroundButton.classList.contains('background-button')){
-    return; // non-button clicked in background container
+    return;
   }
   var backgroundId = backgroundButton.getAttribute('data-id')
   outfit.addGarment(backgroundId, 'background')
@@ -133,7 +137,7 @@ function resetButtonsOnSave() {
 // the img src and alt are the children of the div
 // add the newSavedOutfitCard (child) to the outfit-section div (parent) element
 // textnode is a child as well - it's the text that is entered into the save input
-function createOutfitCard(saveOutfitName){
+function createOutfitCard(saveOutfitName) {
   const newSavedOutfitCard = document.createElement('div');
   newSavedOutfitCard.classList.add('outfit');
   const text = document.createTextNode(saveOutfitName);
@@ -152,27 +156,28 @@ function saveOutfit() {
     return;
   };
   outfit.title = saveInput.value;
-  // took outfit.title from class because title is already being created there
+  var outfitTitle = outfit.title
   saveInput.value = '';
-
   var outfitJson = JSON.stringify(outfit);
-  // can stringify the outfit because it is already json friendly
-  localStorage.setItem(outfit.id, outfitJson);
-  // using the outfit.id as the key because that "should" be uniquie for all outfits
+  localStorage.setItem(outfit.title, outfitJson);
   console.log(outfitJson);
-
-  createOutfitCard(outfit.title);
+  createOutfitCard(outfitTitle);
 };
 
 
-function loadOutfit(id){
-  var outfitJson = localStorage.getItem(id);
-  if(!outfitJson){
-    return;
-  }
-  var outfit = JSON.parse(outfitJson);
-  createOutfitCard(outfit.title);
-}
+function loadOutfit() {
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i)
+    var getValue = localStorage.getItem(key);
+    var parseOutfit = JSON.parse(getValue);
+    // console.log(parseOutfit)
+    outfit = parseOutfit
+    console.log(outfit)
+    var outfitTitle = outfit.title
+    createOutfitCard(outfitTitle);
+    outfit = new Outfit(generateRandomId())
+  };
+};
 
 // function parsedCards(keyName) {
 //   var grabCard = localStorage.getItem(keyName);
