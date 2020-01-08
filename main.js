@@ -169,7 +169,7 @@ function saveOutfit() {
   } else {
   createOutfitCard(outfitTitle);
   saveInput.value = '';
-}; \
+  };
 };
 
 
