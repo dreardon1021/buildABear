@@ -162,10 +162,14 @@ function saveOutfit() {
   };
   outfit.title = saveInput.value.replace(/\s/g,'');
   var outfitTitle = outfit.title
-  saveInput.value = '';
   var outfitJson = JSON.stringify(outfit);
   window.localStorage.setItem(outfit.title, outfitJson);
+  if (outfit.title === saveInput.value){
+    return;
+  } else {
   createOutfitCard(outfitTitle);
+  saveInput.value = '';
+  };
 };
 
 
