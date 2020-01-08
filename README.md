@@ -9,3 +9,6 @@ For the Build A Bear project, there was a minimal focus on HTML and CSS - we mad
 ![Screenshot of Build a Bear](https://i.imgur.com/zHcGOhg.png)
 ![Screenshot of Comp](https://raw.githubusercontent.com/turingschool/front-end-curriculum/gh-pages/assets/images/projects/build-a-bear/bab.png)
 
+Daniel Reardon (Github: https://github.com/dreardon1021)
+Kimala Cochran (Github: https://github.com/kimalajoy)
+Collin Kallery (Github: https://github.com/collinkallery)
