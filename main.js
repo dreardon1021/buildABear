@@ -139,10 +139,12 @@ function resetButtonsOnSave() {
   };
 };
 
+
+
 function createOutfitCard(saveOutfitName) {
   const newSavedOutfitCard = document.createElement('div');
   newSavedOutfitCard.classList.add('outfit');
-  newSavedOutfitCard.classList.add(outfit.title);
+  newSavedOutfitCard.classList.add(`${outfit.title}`.replace(/\s/g,''));
   const text = document.createTextNode(saveOutfitName);
   const closeButton = document.createElement('img');
   closeButton.classList.add('close-button');
@@ -158,12 +160,16 @@ function saveOutfit() {
   if (saveInput.value == '') {
     return;
   };
-  outfit.title = saveInput.value;
+  outfit.title = saveInput.value.replace(/\s/g,'');
   var outfitTitle = outfit.title
-  saveInput.value = '';
   var outfitJson = JSON.stringify(outfit);
   window.localStorage.setItem(outfit.title, outfitJson);
+  if (outfit.title === saveInput.value){
+    return;
+  } else {
   createOutfitCard(outfitTitle);
+  saveInput.value = '';
+  };
 };
 
 
@@ -205,6 +211,7 @@ function grabBearObjOnClick() {
       dressBearClothes(bearOutfit)
       dressBearAcessories(bearOutfit)
       dressBearBackground(bearOutfit)
+      enableSaveButton()
     };
   };
 };
@@ -266,7 +273,7 @@ function addHat(event) {
   };
   var clothingId = event.target.getAttribute('id');
   var clothingImage = document.querySelector(`.${clothingId}`);
-  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+  clothingImage.style.display = clothingImage.style.display === 'none' ? 'block' : 'block';
 };
 
 function highlightClothesButtons(event) {
@@ -286,7 +293,7 @@ function addCloththing(event) {
   };
   var clothingId = event.target.getAttribute('id');
   var clothingImage = document.querySelector(`.${clothingId}`);
-  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+  clothingImage.style.display = clothingImage.style.display === 'none' ? 'block' : 'block';
 };
 
 function highlightAccessoriesButtons(event) {
@@ -306,7 +313,7 @@ function addAccessory(event) {
   };
   var clothingId = event.target.getAttribute('id');
   var clothingImage = document.querySelector(`.${clothingId}`);
-  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+  clothingImage.style.display = clothingImage.style.display === 'none' ? 'block' : 'block';
 };
 
 function highlightBackgroundButtons(event) {
@@ -326,5 +333,5 @@ function addBackground(event) {
   };
   var clothingId = event.target.getAttribute('id');
   var clothingImage = document.querySelector(`.${clothingId}`);
-  clothingImage.style.display = clothingImage.style.display === 'none' ? '' : 'block';
+  clothingImage.style.display = clothingImage.style.display === 'none' ? 'block' : 'block';
 };
