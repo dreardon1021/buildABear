@@ -3,11 +3,10 @@ var saveButton = document.querySelector('.save');
 saveButton.addEventListener('click', clearObj);
 
 class Outfit {
-  constructor(id, title) {
+  constructor(id) {
     this.id = id;
     this.garments = garmentObj;
     this.title = '';
-    // console.log(this);
   };
 
   addGarment(garment, garmentType) {

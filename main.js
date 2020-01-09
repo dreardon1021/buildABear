@@ -1,8 +1,9 @@
 // Outfit class instance
 var outfit = new Outfit(generateRandomId());
+var ids = [];
 
 function generateRandomId() {
-  return Math.floor(Math.random() * 1000);
+  return Math.floor(Math.random() * 100000);
 };
 
 //clothing button containers
@@ -48,7 +49,7 @@ function saveButtonEvents() {
   resetBearItemsOnSave()
   resetButtonsOnSave();
   outfit = new Outfit(generateRandomId());
-};
+}
 
 function hatButtonEvents(event) {
   var hatButton = event.target;
@@ -139,12 +140,10 @@ function resetButtonsOnSave() {
   };
 };
 
-
-
 function createOutfitCard(saveOutfitName) {
   const newSavedOutfitCard = document.createElement('div');
   newSavedOutfitCard.classList.add('outfit');
-  newSavedOutfitCard.classList.add(`${outfit.title}`.replace(/\s/g,''));
+  newSavedOutfitCard.classList.add(`${outfit.id}`);
   const text = document.createTextNode(saveOutfitName);
   const closeButton = document.createElement('img');
   closeButton.classList.add('close-button');
@@ -157,18 +156,18 @@ function createOutfitCard(saveOutfitName) {
 
 // Outfit save cards
 function saveOutfit() {
-  if (saveInput.value == '') {
-    return;
-  };
-  outfit.title = saveInput.value.replace(/\s/g,'');
-  var outfitTitle = outfit.title
+  outfit.title = saveInput.value;
   var outfitJson = JSON.stringify(outfit);
-  window.localStorage.setItem(outfit.title, outfitJson);
-  if (outfit.title === saveInput.value){
-    return;
-  } else {
-  createOutfitCard(outfitTitle);
-  saveInput.value = '';
+  window.localStorage.setItem(outfit.id, outfitJson);
+  for (var i = 0; i < window.localStorage.length; i++) {
+    var key = window.localStorage.key(i);
+    var parsedValue = JSON.parse(key);
+    if (!ids.includes(outfit.id)) {
+      ids.push(parsedValue);
+      createOutfitCard(outfit.title);
+      saveInput.value = '';
+      return;
+    };
   };
 };
 
@@ -179,8 +178,7 @@ function loadOutfit() {
     var getValue = window.localStorage.getItem(key);
     var parseOutfit = JSON.parse(getValue);
     outfit = parseOutfit
-    var outfitTitle = outfit.title
-    createOutfitCard(outfitTitle);
+    createOutfitCard(outfit.title);
     outfit = new Outfit(generateRandomId())
   };
 };
@@ -207,6 +205,7 @@ function grabBearObjOnClick() {
       var retrivedObject = window.localStorage.getItem(key)
       var bearOutfit = JSON.parse(retrivedObject);
       saveInput.value = bearOutfit.title;
+      outfit.id = bearOutfit.id;
       dressBearHat(bearOutfit)
       dressBearClothes(bearOutfit)
       dressBearAcessories(bearOutfit)
